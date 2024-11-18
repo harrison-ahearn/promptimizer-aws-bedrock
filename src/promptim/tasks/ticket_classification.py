@@ -1,7 +1,7 @@
 import functools
 import logging
 
-from langchain_openai import ChatOpenAI
+from langchain_aws import ChatBedrockConverse
 from pydantic import BaseModel, Field
 
 from promptim.trainer import PromptWrapper, Task
@@ -29,7 +29,7 @@ def _get_judge():
     from trustcall import create_extractor
 
     return create_extractor(
-        ChatOpenAI(model="gpt-4o-mini"), tools=[Grade], tool_choice=Grade.__name__
+        ChatBedrockConverse(model="anthropic.claude-3-5-sonnet-20241022-v2:0"), tools=[Grade], tool_choice=Grade.__name__
     )
 
 
