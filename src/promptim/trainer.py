@@ -43,10 +43,11 @@ _runner.print = _noop  # type: ignore
 _arunner.print = _noop  # type: ignore
 
 DEFAULT_OPTIMIZER_MODEL_CONFIG = {
-    "model": "claude-3-5-sonnet-20241022",
+    "model": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+    "model_provider": "bedrock_converse",
     "max_tokens_to_sample": 8192,
 }
-DEFAULT_PROMPT_MODEL_CONFIG = {"model": "claude-3-5-haiku-20241022"}
+DEFAULT_PROMPT_MODEL_CONFIG = {"model": "anthropic.claude-3-haiku-20240307-v1:0", "model_provider": "bedrock_converse"}
 
 DEFAULT_METAPROMPT = """You are an expert prompt engineer tasked with improving prompts for AI tasks.
 You will use all means necessary to optimize the scores for the provided prompt so that the resulting model can

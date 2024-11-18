@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+from dotenv import load_dotenv
+load_dotenv()
+
 import asyncio
 import importlib.util
 import json
@@ -587,7 +590,8 @@ def create_task(
         },
         "optimizer": {
             "model": {
-                "model": "claude-3-5-sonnet-20241022",
+                "model": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+                "model_provider": "bedrock_converse",
                 "max_tokens_to_sample": 8192,
             }
         },
@@ -772,7 +776,8 @@ def create_example_task(path: str, name: str):
         "evaluators": "./task.py:evaluators",
         "optimizer": {
             "model": {
-                "model": "claude-3-5-sonnet-20241022",
+                "model": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+                "model_provider": "bedrock_converse",
                 "max_tokens_to_sample": 8192,
             }
         },

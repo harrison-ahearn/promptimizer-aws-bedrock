@@ -1,0 +1,7 @@
+langchain
+langchain-aws
+langsmith
+pandas>=0.2.4
+rich
+click
+python-dotenv

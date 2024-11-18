@@ -1,5 +1,5 @@
 import langsmith as ls
-from langchain_anthropic import ChatAnthropic
+from langchain_aws import ChatBedrockConverse
 from langchain_core.prompts import ChatPromptTemplate
 
 from promptim.tasks.scone import scone_task
@@ -60,8 +60,8 @@ class MetapromptSystem:
 
     def __init__(self, task_map: dict[str, Task], meta_prompt: PromptWrapper):
         self.task_map = task_map
-        self.model = ChatAnthropic(
-            model="claude-3-5-sonnet-20241022", max_tokens_to_sample=8192
+        self.model = ChatBedrockConverse(
+            model="anthropic.claude-3-5-sonnet-20241022-v2:0"
         )
         self.trainer = PromptOptimizer(self.model, meta_prompt.get_prompt_str())
 

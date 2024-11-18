@@ -1,6 +1,6 @@
 from typing import Literal
 
-from langchain_openai import ChatOpenAI
+from langchain_aws import ChatBedrockConverse
 from pydantic import BaseModel, Field
 
 from promptim.trainer import PromptWrapper, Task
@@ -87,7 +87,7 @@ class GraderOutput(BaseModel):
     )
 
 
-grader = ChatOpenAI(model="gpt-4o-mini").with_structured_output(GraderOutput)
+grader = ChatBedrockConverse(model="anthropic.claude-3-5-sonnet-20241022-v2:0").with_structured_output(GraderOutput)
 
 
 async def simpleqa_evaluator(run, example):
