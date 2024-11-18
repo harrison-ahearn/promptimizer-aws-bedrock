@@ -1,3 +1,10 @@
+Created as a fork from Promptim (hinthornw/promptimizer)
+
+Differences:
+  - use of ChatBedrockConverse instead of ChatAnthropic
+    - still uses Sonnet and Haiku as default models, just thru AWS Bedrock
+  - removed Poetry and replaced with pip requirements (I don't know how to use Poetry)
+
 # Promptim
 
 Promptim is an experimental **prompt** opt**im**ization library to help you systematically improve your AI systems.
